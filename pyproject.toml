@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=77.0.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cws-analytics"
+dynamic = ["version"]
+description = "Pull Chrome Web Store developer-dashboard usage analytics to CSV."
+readme = "README.md"
+requires-python = ">=3.9"
+license = "MIT"
+license-files = ["LICENSE"]
+keywords = ["chrome-web-store", "chrome-extension", "analytics", "cli"]
+authors = [
+  {name = "Nazım Gediz Aydındoğmuş", email = "n.gedizaydindogmus@gmail.com"},
+]
+classifiers = [
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+    "Topic :: Utilities",
+]
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/gediz/cws-analytics"
+Repository = "https://github.com/gediz/cws-analytics"
+Issues = "https://github.com/gediz/cws-analytics/issues"
+
+[project.scripts]
+cws-analytics = "cws_analytics:main"
+
+[tool.setuptools]
+py-modules = ["cws_analytics"]
+
+[tool.setuptools.dynamic]
+version = {attr = "cws_analytics.__version__"}
